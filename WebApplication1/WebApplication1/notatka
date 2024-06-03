@@ -1,0 +1,48 @@
+﻿
+dotnet new tool-manifest
+dotnet tool install dotnet-ef
+
+dotnet ef migrations add init --project WebApplication1/WebApplication1.csproj
+dotnet ef database update --project WebApplication1/WebApplication1.csproj
+
+
+
+{
+  "idPrescription": 1,
+  "date": "2024-06-03T01:22:48.574Z",
+  "dueDate": "2024-08-03T01:22:48.574Z",
+  "idPatient": 1,
+  "idDoctor":1,
+  "prescriptionMedicaments": [
+    {
+      "idMedicament": 1,
+      "dose": 4,
+      "details": "string"
+    }
+  ]
+}
+
+
+INSERT INTO Doctor (FirstName, LastName, Email)
+VALUES
+('John', 'Doe', 'john.doe@example.com'),
+('Jane', 'Smith', 'jane.smith@example.com'),
+('Emily', 'Johnson', 'emily.johnson@example.com');
+
+INSERT INTO Patient (FirstName, LastName, BirthDate)
+VALUES
+('Alice', 'Brown', '1980-05-15'),
+('Bob', 'Green', '1990-07-20'),
+('Charlie', 'Black', '1975-09-10');
+
+INSERT INTO Medicament (Name, Description, Type)
+VALUES
+('Aspirin', 'Pain reliever', 'Analgesic'),
+('Amoxicillin', 'Antibiotic', 'Antibiotic'),
+('Metformin', 'Diabetes medication', 'Antidiabetic');
+
+INSERT INTO Prescription (Date, DueDate, IdPatient, IdDoctor)
+VALUES
+('2024-06-01', '2024-06-10', 1, 1),
+('2024-06-02', '2024-06-12', 2, 2),
+('2024-06-03', '2024-06-15', 3, 3);
